@@ -165,6 +165,21 @@ class GrowthBookSDK() : FeaturesFlowDelegate {
     }
 
     /**
+     * Set user attributes that are used to assign variations
+     */
+    fun setAttributes(attributes: Map<String, Any>) {
+        gbContext = GBContext(
+            apiKey = gbContext.apiKey,
+            enabled = gbContext.enabled,
+            attributes = gbContext.attributes,
+            hostURL = gbContext.hostURL,
+            qaMode = gbContext.qaMode,
+            forcedVariations = gbContext.forcedVariations,
+            trackingCallback = gbContext.trackingCallback
+        )
+    }
+
+    /**
      * Get Cached Features
      */
     fun getFeatures() : GBFeatures {
